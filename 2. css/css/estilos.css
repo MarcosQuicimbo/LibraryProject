@@ -1,0 +1,178 @@
+/*CSS se define una serie de terminos que permiten escribir cada una
+de las partes que componen ,os estilos CascadeStyleSheet
+
+-Componente de un estilo CSS basico
+<----------------------------->Regla CSS
+h1{color: red; font-size: 50px}
+
+En CSS3 se incluye 239 pro
+
+h1{
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+}
+/*SELECTORES
+Universal
+*/
+
+@font-face {
+    font-family: "comforter";
+    src: url(font/ComforterBrush-Regular.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+/*Selector de tipo o etiqueta*/
+nav{
+    color: blue;
+    font-size: 25px;
+    font-family: comforter;
+}
+/*Selector descendente: elementos dentro de otros*/
+article{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: blue;
+}
+article span{
+    color: red;
+}
+article a{
+    color: black;
+    text-decoration: none;
+    background-color: yellow;
+}
+/*Selector de clase: permite aplicar estilos mediante el atributo class*/
+.destacado{
+    color: rosybrown;
+    border: 10px solid black;
+    background: blueviolet;
+}
+.error{
+    color: red;
+    font-weight: bold;
+    background: white;
+}
+.alerta{
+    color: black;
+    padding: 5px;
+    border: 5px solid black;
+    background: yellow;
+}
+p.destacado{
+    color: orange;
+}
+/*Selector por id*/
+#destacado{
+    background: hotpink;
+}
+div#destacado{
+    background-color: green;
+}
+
+
+main{
+    background-color: coral;
+}
+main section{
+    color: yellow;
+}
+aside{
+    background-color: red;
+    color: white;
+}
+footer{
+    background-color: black;
+    color: white;
+}
+
+/*Combinacion de selectores basicos
+.alerta .destacado . error{}
+div.alerta span.especial{}
+
+UNIDADES DE MEDIDA
+in pulgadas
+cm cemtrimetros
+mm milimetros
+pt puntos
+pc picas
+
+0.5in --> .5in
+
+unidades relativas
+em no como <em>, relativa al tamaño de la letra
+ex respecto a la altura de la letra x
+px pixel respecto a la resolucion de la pantalla del dispositivo
+
+porcentajes
+h1{font-size: 50%;}
+
+COLORES
+--palabras clave en ingles
+red, white, blue, etc...
+
+RGB decimal
+se hace referencia a RedGreenBlue y CYMK
+valores ente 0 y 255
+p{color: rgb(71,42,59);}
+
+RGB porcentual
+p{color: rgb(0%,10%,80%);}
+
+RGB hexadecimal
+p{color: #34AB11;}
+p{color: #335588;} -> p{color: #358}
+
+MODELO DE CAJAS
+tambien es conocido como bx model, es el comportamiento CSS que hace
+que todos los elementos de las paginas se representen mediante cajas rectangulares
+
+-las cajas se crean automaticamente cada vez que se inserta una etiqueta HTML
+-las cajas no son visibles a simple vista, inicialmente no tienen color de fondo
+ni borde
+-los navegadores las colocan de forma automatica, pero con CSS es posible modificar
+sus caracteristicas
+
+Partes de una caja
+contenido (content)
+relleno (padding)
+borde (border)
+imagen de fondo (background-image)
+color de fondo (background-color)
+margen (margin): separacion entre la caja y el resto de cajas adyacentes
+    el relleno y margen son transparentes
+
+ALTURA
+height
+min-hegiht max-height
+
+ANCHURA
+width
+
+MARGEN
+margin-top, margin-right, margin-bottom, margin-left
+div{
+    margin: .5em .5em .5em .5em;
+}
+
+RELLENO
+padding-top, padding-right, padding-bottom, padding left
+
+BORDES
+Anchura
+border-top-width, border-right-width, border-bottom-width, border-left-width
+
+*/
+div{
+    width: 300px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-right: 30px;
+    margin-left: 30px;
+    border: 10px dotted black;
+}
+/*FONDOS
+
+*/

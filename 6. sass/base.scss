@@ -1,0 +1,115 @@
+//comentarios
+//declaracion de variables
+$color-fondo:#ccc;
+$color-letra: red;
+$fuente-letra: sans-serif;
+$color-secundario: rgb(150,20,20);
+//uso de variables
+body{
+    background-color: $color-fondo;
+}
+h1{
+    color: $color-letra;
+    font-family: $fuente-letra;
+}
+p{
+    color: $color-secundario;
+}
+//anidacion
+.caja{
+    border: 1px solid black;
+    width: 300px;
+    margin: 0px auto;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    h1{
+        color: blue;
+    }
+    p{
+        color: green;
+    }
+    .info{
+        font-size: 20px;
+        .autor{
+            font-size: 15px;
+            color: orange;
+        }
+    }
+}
+//mixins son funciones
+/*
+@mixin crearBordes(){
+    border: 5px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px black;
+}
+*/
+@mixin crearBordes($color, $size, $shadow){
+    border: 5px solid $color;
+    border-radius: $size;
+    box-shadow: 0px 0px 5px $shadow;
+}
+.caja{
+    //@include crearBordes();
+    @include crearBordes(red,5px,black);
+}
+.listado{
+    @include crearBordes(green,5px,black)
+}
+
+//herencia de estilos basicos
+%alert-normal{
+    border: 1px solid gray;
+    background: #eee;
+    color: gray;
+    padding: 10px;
+    width: 70%;
+    margin: 20px auto;
+}
+.alert{
+    @extend %alert-normal;
+}
+.alert-danger{
+    @extend %alert-normal;
+    color: red;
+    border-color: red;
+}
+.alert-success{
+    @extend %alert-normal;
+    color: green;
+    border-color: green;
+}
+//operaores para realizar operaciones matemáticas
+.clearfix{
+    clear: both;
+}
+$caja:200px;
+$wrap:900px;
+.cajas{
+    width: $wrap;
+    margin: 0px auto;
+}
+.caja{
+    float: left;
+    width: $caja/$wrap *100%;
+}
+h1{
+    font-size: 200px +5px -1px;
+}
+//condicionales
+$color-fondo: black;
+h1{
+    @if($color-fondo == #ccc){
+        color: black;
+    }else{
+        color: salmon;
+    }
+}
+//for
+$contador:1;
+@for $contador from 1 through 10{
+    .listado ul li:nth-child(#{$contador}){
+        font-size: $contador*2px;
+    }
+}

@@ -1,0 +1,58 @@
+<div class = "container">
+    <h2>{{titulo}}</h2>
+    <form #libroForm="ngForm" (ngSubmit)="guardarLibro(libroForm)">
+        <p>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="libro.nombre" required>
+            <span *ngIf="nombre.touched && !nombre.valid">
+                Nombre obligatorio
+            </span>
+        </p>
+
+        <p>
+            <label for="autor">Autor</label>
+            <input type="text" name="autor" #autor="ngModel" [(ngModel)]="libro.autor" required>
+            <span *ngIf="autor.touched && !autor.valid">
+                Author obligatorio
+            </span>
+        </p>
+
+        <p>
+            <label for="edicion">Edicion</label>
+            <input type="text" name="edicion" #edicion="ngModel" [(ngModel)]="libro.edicion" required>
+            <span *ngIf="edicion.touched && !edicion.valid">
+                Edición obligatorio
+            </span>
+        </p>
+       
+        <p>
+            <label for="anio">Año</label>
+            <input type="text" name="anio" #anio="ngModel" [(ngModel)]="libro.anio" required>
+            <span *ngIf="anio.touched && !anio.valid">
+                Año obligatorio
+            </span>
+        </p>
+     
+
+        <p>
+            <label for="precio">Precio</label>
+            <input type="text" name="precio" #precio="ngModel" [(ngModel)]="libro.precio" required>
+            <span *ngIf="precio.touched && !precio.valid">
+                Precio obligatorio
+            </span>
+        </p>
+
+
+
+
+        <p>
+            <label for="imagen">Imagen</label>
+            <!-- <input type="text" name="imagen" #imagen="ngModel" [(ngModel)]="libro.edicion" required> -->
+            <span *ngIf="libro.imagen" style="float:none;">
+                <img src="{{url+'get-imagen/'+libro.imagen}}" style="width:2px">
+            </span>
+            <input type="file" #archivoImagen placeholder="Seleccionar Imagen" (change)="imagenChangeEvent($event)">
+        </p>
+        <input type="submit" value="Guardar" [disabled]="!libroForm.form.valid">
+    </form>
+</div>

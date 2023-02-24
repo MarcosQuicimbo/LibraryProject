@@ -1,0 +1,25 @@
+/*  
+Preprocesadores de CSS
+permiten funcionalidad a CSS
+
+Los mas importantes:
+SASS:https://sass-lang.com/
+LESS:https://lesscss.org/
+
+1. Instalacion
+    1.1 Instalar NodeJS para trabajar con la terminal
+        https://nodejs.org/es/download/
+    1.2 comprobar a instalacion de nodejs
+        node -v
+    1.3 instalacion de sass
+        npm install -g sass   //g: instalacion de forma global
+    1.4 comprobar la version instalada
+        sass --version
+        si no funciona escoger la terminal gitbash o cmd(command prompt)
+2. Creamos un archivo sass
+    estilos.scss
+    2.1 compilamos el archivo de la siguiente manera:
+        sass estilos.scss styles.css
+    2.2 para verificar cambios se agrega la opcion watch
+        sass --watch estilos.scss styles.css
+*/

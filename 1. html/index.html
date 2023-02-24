@@ -1,0 +1,223 @@
+<!--
+HTML (Hypertext markup languaje)
+este lenguaje usa etiquetas
+{          Daniel               }
+<etiqueta> Contenido </etiqueta>
+Las estiquetas tienen atributos
+<etiqueta atributo ="valor"> Contenido </etiqueta>
+Los atributos cambian el comportamiento de la etiqueta
+<h1 class="uno">Hola</h1>
+Las paginas tienen una estructura:
+                                  Cabecera,
+                                  cuerpo,
+                                  pie
+
+-->
+
+<!DOCTYPE HTML> <!--Para especificar que es html5-->
+<html lang="es">
+    <!--
+        lenugaje español
+        cabecera(head): se ubica los metadastos o datos no visibles dentro del cuerpo de la pagina.
+            styles -> estilos
+            script -> comportamiento, carga de archivos tipo script
+            url de documentos
+
+    -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="autor" content="AJQR">
+        <meta name="keyword" content="" >
+        <meta name="copyright" content="Drerechos de autor AJQR">
+        <link rel="shocut icon" href="auto.ico">
+        <title>Mi pagina web</title>
+    </head>
+    <!--En el body se coloca todos los elementos a mostrar-->
+    <body>
+        <h1>Mi pagina web</h1>
+        <!--<h2>Bienvenidos</h2>
+        <h3>Hola con h3</h3>
+        <h4>Hola con h4</h4>
+        <h5>Hola con h5</h5>
+        <h6>Hola con h6</h6>-->
+
+        <!--
+            Las etiquetas h son para los titulos
+            exixten hasta la h6
+
+            todo lo que esxiste en una pagina es texto dinamico o estico
+        -->
+
+        <h2>TEXTOS</h2>
+        <p>Hola 1</p>
+        <p>Hola 2</p>
+        <p>
+            <u>Lorem Ipsum is simply dummy text of the printing and typesetting industry</u>. 
+            <em>Lorem Ipsum</em> has been the industry's <i>standard dummy text ever since the 1500s</i>, 
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+            It has survived not only five centuries, but also the leap into electronic typesetting, 
+            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
+            containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
+            including versions of Lorem Ipsum.
+        </p>
+        <!--
+            salto de liunea con br o hr
+            Cuando una etiqueta no se cieraa se conoce como huerfana
+        -->
+        <hr>
+        <p>
+            <strong>The standard chunk of Lorem Ipsum used</strong> since the 1500s is reproduced below for those interested.<br/> 
+            <b>Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum"</b> by Cicero are also reproduced in their exact 
+            original form,<br>accompanied by English versions from the 1914 translation by H. Rackham.
+        </p>
+        <p>
+            <span> There are many variations of passages of Lorem Ipsum available</span>, but the majority have suffered 
+            alteration in some form, by injected humour, or randomised words which don't look even slightly believable. 
+            If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden
+             in the middle of text.
+        </p>
+
+        <h2>ETIQUETAS MULTIMEDIA</h2>
+        <h2>IMAGENES</h2>
+        <!--
+            alt texto alternativo
+            title titulo de la imagen
+            src ruta de la imagen
+                ruta relativa donde nos encontramos imagenes/auto.jpg
+                ruta absoluta toda la ruta donde se encientra la imagen
+                    E:\UNI\6-SEXTO SEMESTRE\Aplicaciones WEB\Ejercicios\1. html\imagenes\auto.jpg
+            
+            Tamaño de la imagen alto/ancho with height
+            se recomienda topar uno de ellos
+            px->pixel
+        -->
+
+        <img src="imagenes/auto.png" alt="Auto" 
+        title="Lamborghini" width="" height="200px">
+
+        <img src="http://assets.stickpng.com/thumbs/580b585b2edbce24c47b2c8b.png" 
+        alt="Auto" title="Lamborghini" width="" height="300px">
+        
+        <h2>CONTENIDO EXTERNO</h2>
+        <!--
+            Permite inscrustar contenido externo
+            embed: inscrutar contenido interactivo
+            object: incrustar fallbacks
+            param: parametros
+        -->
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/O8IH2m_yaWw" 
+        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+        encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fsupercarblondie%2Fvideos%2F3151981061749683%2F&show_text=false&width=267&t=0" 
+        width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" 
+        allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+        allowFullScreen="true"></iframe>
+
+        <h2>VIDEO</h2>
+        <!--
+            src
+            postr
+            preload
+            mediagroup
+            autoplay
+            loop
+            muted
+            controls
+            edith
+            eight
+            formatos: mp4, webm, av1, ogv, mkv, avi
+            usbtitulos
+        -->
+
+        <video src="video.mp4" controls width="480"></video>
+
+        <h2>AUDIO</h2>
+
+        <audio src="audio.mp3" controls></audio>
+        <!--formaatos:mp3, aac, ogg, opus, flac, wav -->
+
+        <h2>LISTAS</h2>
+        <!--
+            ol ordenaded list - ordenado
+            ul unordenaded list - desordenado
+        -->
+
+        <ol>
+            <li>Sistemas</li>
+            <li>Electrica</li>
+            <li>Civil</li>
+            <li>ESFOT
+                <ul>
+                    <li>ASI</li>
+                    <li>ASA</li>
+                    <li>MEC</li>
+                    <li>ELEC</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>TABLAS</h2>
+        <table border="1">
+            <thead>
+                <caption>Mi tabla</caption>
+                <tr>
+                    <th>No.</th>
+                    <th>Provincia</th>
+                    <th>Capital</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>1</td>
+                <td>Pichincha</td>
+                <td>Quito</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Guayas</td>
+                <td>Guayaquil</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Azuay</td>
+                <td>Cuenca</td>
+            </tr>
+        </table>
+
+        <h2>FORMULARIOS</h2>
+        <form>
+            <p>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" placeholder="Escribre tu nombre"/>
+            </p>
+            <p>
+                <label for="descripcion">Descripción</label>
+                <textarea name="descripcion"></textarea>
+            </p>
+            <p>
+                <input type="radio" name="genero" value="Masculino"/>Masculino
+                <input type="radio" name="genero" value="Femenino"/>Femenino
+            </p>
+            <p>
+                <select>
+                    <option name="genero" value="masculino">M</option>
+                    <option name="genero" value="femenino">F</option>
+                    <option name="genero" value="otro">O</option>
+                </select>
+            </p>
+            <p>
+                <label for="contrasenia">Contraseña</label>
+                <input type="password" name="contrasenia" placeholder="Escribe tu contraseña..."/>
+            </p>
+            <p>
+                <label for="imagen">Imagen</label>
+                <input type="file"/>
+            </p>
+            <p>
+                <input type="submit" value="Enviar">
+            </p>
+        </form>
+        
+    </body>
+</html>
