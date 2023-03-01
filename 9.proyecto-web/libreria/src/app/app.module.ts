@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { RegisterComponent } from './components/register/register.component';
 //import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -29,7 +30,8 @@ import { LogoutComponent } from './components/logout/logout.component';
     DetallelibroComponent,
     EditarlibroComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

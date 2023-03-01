@@ -17,18 +17,20 @@ router.get('/libro/:id',librosController.getLibro);
 router.delete('/libro/:id',librosController.deleteLibro);
 //actulizar un libro
 router.put('/libro/:id',librosController.updateLibro);
-//agregar una imagen
+//agregar una imagen libros
 router.post('/subir-imagen/:id',mutipartyMiddleWare,librosController.uploadImage);
-//recuperar la imagen
+//recuperar la imagen libros
 router.get('/get-imagen/:imagen',librosController.getImagen);
-/*router.post
-router.put
-router.delete
-*/
+
 //crear usuario
 router.post('/create-user',usuarioController.saveUsuario);
 //login
 router.post('/login',usuarioController.login);
 //logout
 router.get('/logout',usuarioController.logout);
+//agregar una imagen usuarios
+router.post('/subir-imagen/:id',mutipartyMiddleWare,usuarioController.uploadImage);
+//recuperar la imagen usuarios
+router.get('/get-imagen/:imagen',usuarioController.getImagen);
+
 module.exports=router;

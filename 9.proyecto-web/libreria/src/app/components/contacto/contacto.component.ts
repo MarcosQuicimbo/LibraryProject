@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./contacto.component.css']
 })
 export class ContactoComponent {
+  name: string ;
+  email: string;
+  message: string;
+  submitted: boolean = false;
 
+  constructor(){
+    this.name = ""; 
+    this.email= ""; 
+    this.message=""; 
+
+  }
+  onSubmit() {
+    this.submitted = true;
+  }
 }

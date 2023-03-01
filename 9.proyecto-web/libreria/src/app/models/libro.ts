@@ -1,4 +1,4 @@
-//recipiente que permite guardar cuando llame desde fornt-back 
+//recipiente que permite guardar cuando llame desde front-back 
 
 export class Libro {
     constructor(

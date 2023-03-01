@@ -1,0 +1,60 @@
+backend:
+	controllers: 
+		libro.controller.js:
+			libro.controllers.js: 
+				inicio, getLibros, saveLibros, getLibro, deleteLibro, updateLibro, uploadImage, getImage
+			usuario.controller.js: 
+				inicio, saveUsuario, login(validación), logout(salida de sesión), uploadImage, getImage
+	models: está la estructura de como se debe crear un libro y un usuario 
+		libro.js: 
+			se tiene el Schema de libro, nombre, autor, edición, ...
+		usuario.js: 
+			se tiene el Schema de usuario, user, password
+
+	node_modules: 
+		cosas propias cuando se genera un proyecto angular 
+	routers: 
+		libros.routes.js 
+
+	uploads: 
+		las imagenes 
+	app.js: 
+		toda la configuración para que el server corra, las cabezeras que se permiten, creo la sesión 
+	index.js: 
+		conexión con la base de datos 
+	package.json: 
+		todo lo que se ha instalado para que corra la app
+
+
+frontend: 
+	src: 
+		app: 
+			components: 
+				home: 
+				contacto: 
+				crearLibro: 
+				detalleLibro: 
+				encabezado: 
+				editarLibro: 
+				libros:
+				login: 
+				logout: 
+				pie: 
+			models: todos los atributos de un usuario-libro
+				libro.js 
+				usuario.js 
+			service: 
+				libro.services.ts -> consume el servico que brinda el Controller
+					retorna un observable del tipo any 
+					HttpHeaders class is used to set the Content-Type header of the HTTP request to application/json
+					get method of the HttpClient service is used to make the HTTP GET request. It takes the URL and an options object as parameters
+		assets: 
+			css 
+			imagen
+
+Códigos de status 
+1. Respuestas informativas (100–199),
+2. Respuestas satisfactorias (200–299),
+3. Redirecciones (300–399),
+4. Errores de los clientes (400–499),
+5. Errores de los servidores (500–599).

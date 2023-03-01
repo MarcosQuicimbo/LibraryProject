@@ -28,7 +28,7 @@ export class CrearlibroComponent implements OnInit {
     private _libroService:LibroService,
     private _cargarService:CargarService
   ) {
-    this.titulo="GUARDAR LIBRO";
+    this.titulo="Nuevo usuario";
     this.url=Global.url;
     this.libro=new Libro('','','','',2023,100,'');
     this.libroGuardar=new Libro('','','','',2023,100,'');

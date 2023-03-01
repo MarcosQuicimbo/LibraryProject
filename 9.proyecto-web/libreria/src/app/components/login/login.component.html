@@ -1,1 +1,36 @@
 <p>login works!</p>
+<div class="container">
+    <h2>{{titulo}}</h2>
+    <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm)">
+        <p>
+            <label for="user">User</label>
+            <input type="text" name="user" #user="ngModel" [(ngModel)]="usuario.user" required>
+            <span *ngIf="user.touched && !user.valid">
+                You should write  your user 
+            </span>
+        </p>
+
+        <p>
+            <label for="password">Password</label>
+            <input type="text" name="password" #password="ngModel" [(ngModel)]="usuario.password" required>
+            <span *ngIf="password.touched && !password.valid">
+                You should write  your password 
+            </span>
+        </p>
+
+        <!-- <p>
+            <label for="imagen">Imagen</label>
+            <input type="text" name="imagen" #imagen="ngModel" [(ngModel)]="libro.edicion" required>
+            <span *ngIf="usuario.imagen" style="float:none;">
+                <img src="{{url+'get-imagen/'+usuario.imagen}}" style="width:2px">
+            </span>
+            <input type="file" #archivoImagen placeholder="Seleccionar Imagen" (change)="imagenChangeEvent($event)">
+        </p> -->
+        
+        <!-- <button type="submit" class="btn btn-primary">Login</button> -->
+        <input type="submit" value="SaveUser" [disabled]="!loginForm.form.valid">
+        
+    </form>
+
+
+</div>

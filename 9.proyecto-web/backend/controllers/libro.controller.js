@@ -1,3 +1,4 @@
+//aqui están los métodos para el libro 
 'use strict'
 var Libro=require('../models/libro');
 var path=require('path');
@@ -8,34 +9,34 @@ var controller={
             "<h1>Hola 2</h1>"
         );
     },
+    //para obtener los libros 
     getLibros:function(req,res){
-        Libro.find({}).sort().exec((err,libros)=>{
+        Libro.find({}).sort().exec((err,libros)=>{//es una promesa, me da dos tipos, error-> caso malo, libros-> caso bueno 
             if (err) return res.status(500).send({message:'Error al recuperar los datos'});
             if(!libros) return res.status(404).send({message:'No hay libros para mostrar'});
             return res.status(200).send({libros});
         })
 
     },
+    //para ingresar un libro al sistema
     saveLibro:function(req,res){
         var libro=new Libro();
-        var params=req.body;
-        libro.nombre=params.nombre;
+        var params=req.body;//en el params viene todo lo que contiene el html "body"
+        libro.nombre=params.nombre;//hago el match entre este método y lo que obtengo del body
         libro.autor=params.autor;
         libro.edicion=params.edicion;
         libro.anio=params.anio;
         libro.precio=params.precio;
         libro.imagen= null; 
-
-
-        libro.save((err,libroGuardado)=>{
+        //tipo de metodo que usa .save()
+        libro.save((err,libroGuardado)=>{//promesa; error-> caso1; defino: libroGuardado-> caso2
             if (err) return res.status(500).send({message:'Error al guardar'});
             if(!libroGuardado) return res.status(404).send({message:'No se ha guardado el libro'});
             return res.status(200).send({libro:libroGuardado});
         })
     },
     getLibro:function(req,res){
-
-        var libroId = req.params.id;
+        var libroId = req.params.id;//necesito un ID para recuperar un libro en contreto 
         if (libroId==null) return res.status(500).send({message:'El libro no existe'});
         Libro.findById(libroId,(err,libro)=>{
             if(err) return res.status(500).send({message:'No hay libros para mostrar'});
@@ -45,7 +46,6 @@ var controller={
     }, 
     deleteLibro:function(req,res){
         var libroId = req.params.id;
-
         Libro.findByIdAndRemove(libroId,(err,libroBorrado)=>{
             if(err) return res.status(500).send({message:'Error al borrar los datos'});
             if(!libroBorrado) return res.status(404).send({message:'No se puede borrar el libro'});
@@ -55,7 +55,6 @@ var controller={
     updateLibro:function(req,res){
         var libroId = req.params.id;
         var update = req.body; 
-
         Libro.findByIdAndUpdate(libroId,update,{new:true},(err,libroActualizado)=>{
             if(err) return res.status(500).send({message:'Error al actualizar los datos'});
             if(!libroActualizado) return res.status(404).send({message:'No existe libro a actualizar'});
@@ -65,7 +64,6 @@ var controller={
     uploadImage:function(req,res){
         var libroId = req.params.id; 
         var fileName = 'Imagen no subida'; 
-        
         if(req.files){
             var filePath = req.files.imagen.path;
             var file_split = filePath.split('\\');

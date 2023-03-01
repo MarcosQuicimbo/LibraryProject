@@ -16,6 +16,6 @@ module.exports=mongoose.model('Usuario',UsuarioSchema);
 //se debe cerrar la sesión 
 //node, express , express session 
 //como voy a mapear en la base de datos 
-//un prod. un contro para ese prod. 
+//un prod. un controlador para ese prod. 
 //usuario también un controller update, create 
-//necesot un controlador 
+//necesito un controlador 

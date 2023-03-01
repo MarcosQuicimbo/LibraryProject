@@ -49,10 +49,10 @@
             <label for="imagen">Imagen</label>
             <!-- <input type="text" name="imagen" #imagen="ngModel" [(ngModel)]="libro.edicion" required> -->
             <span *ngIf="libro.imagen" style="float:none;">
-                <img src="{{url+'get-imagen/'+libro.imagen}}" style="width:2px">
+                <img src="{{url+'get-imagen/'+libro.imagen}}" style="width:20px">
             </span>
             <input type="file" #archivoImagen placeholder="Seleccionar Imagen" (change)="imagenChangeEvent($event)">
         </p>
-        <input type="submit" value="Guardar" [disabled]="!libroForm.form.valid">
+        <input type="submit" value="SaveBook" [disabled]="!libroForm.form.valid">
     </form>
 </div>
